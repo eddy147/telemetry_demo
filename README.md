@@ -1,21 +1,21 @@
 # TelemetryDemo
 
-**TODO: Add description**
+```bash
+Ecto → :telemetry events → TelemetryMetricsPrometheus
+                            ↓
+                      /metrics endpoint
+                            ↓
+                   Prometheus server scrapes
+                            ↓
+                  Grafana dashboard + alerts
 
-## Installation
+Ecto → :telemetry events → custom handler
+                            ↓
+                          Logger
+                            ↓
+                         Loki (logs)
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `telemetry_demo` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:telemetry_demo, "~> 0.1.0"}
-  ]
-end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/telemetry_demo>.
+
 

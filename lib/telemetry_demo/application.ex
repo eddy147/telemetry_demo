@@ -8,8 +8,8 @@ defmodule TelemetryDemo.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: TelemetryDemo.Worker.start_link(arg)
-      # {TelemetryDemo.Worker, arg}
+      TelemetryDemo.Repo,
+      TelemetryDemo.Telemetry
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
