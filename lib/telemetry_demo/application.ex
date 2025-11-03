@@ -9,7 +9,11 @@ defmodule TelemetryDemo.Application do
   def start(_type, _args) do
     children = [
       TelemetryDemo.Repo,
-      TelemetryDemo.Telemetry
+      {TelemetryMetricsPrometheus,
+       metrics: TelemetryDemo.Telemetry.metrics(), port: 9568, ip: {127, 0, 0, 1}},
+      TelemetryDemo.Telemetry,
+      # handler for slow queries
+      TelemetryDemo.TelemetryHandler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

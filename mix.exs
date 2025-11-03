@@ -24,8 +24,10 @@ defmodule TelemetryDemo.MixProject do
     [
       {:ecto_sql, "~> 3.11"},
       {:postgrex, ">= 0.0.0"},
+      {:plug_cowboy, "~> 2.6"},
       {:telemetry, "~> 1.2"},
-      {:telemetry_metrics, "~> 0.6"}
+      {:telemetry_metrics, "~> 0.6"},
+      {:telemetry_metrics_prometheus, "~> 1.1"}
     ]
   end
 end

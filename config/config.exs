@@ -9,5 +9,9 @@ config :telemetry_demo, TelemetryDemo.Repo,
   pool_size: 10,
   telemetry_prefix: [:telemetry_demo, :repo]
 
-
 config :telemetry_demo, ecto_repos: [TelemetryDemo.Repo]
+
+config :telemetry_metrics_prometheus,
+  port: 9568,
+  # binds only to localhost
+  ip: {127, 0, 0, 1}
